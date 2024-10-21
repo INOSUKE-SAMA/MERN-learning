@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+*{
+    background-color: green;
+    font-family:'Merriweather',serif ;
+}
+
+body{
+    background-color: blue;
+    height: 100%;
+    width: 100%;
+}
+
+.heading{
+    color: pink;
+    background: black;
+}
+
+#heading2{
+    color: white;
+    background: black;
+}
+
+.box-model{
+    background-color: grey;
+    height: 200px;
+    width: 200px;
+    border: 3px solid red;
+    margin: 200px;
+}
+
+.box-heading{
+    background-color: blue;
+    padding: 30px 50px  0px 40px;
+}
+
+.text-styling :nth-of-type(even){
+    color: red;
+}
+
+.text-styling :nth-of-type(odd){
+    color: yellow;
+}
+
+.text-styling :hover{
+    color: purple;
+    cursor: pointer;
+}
+
+#styling{
+    text-align: center;
+    letter-spacing: 10px;
+    line-height: 30px;
+    font-size: 40px;
+    Merriweathe
+}
+
