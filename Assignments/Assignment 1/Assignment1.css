@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*horizontally*/
+    align-items: center;/*vertically*/
+    height: 100vh;
+    margin: 0;
+    background-color: lightblue;
+    
+   
+}
+
+.heading-box{
+    margin: 10px 0;
+    padding: 10px;
+    border: 30px solid black;
+    width: 80%;
+    text-align: center;
+    background-color: brown;
+}
+
+.heading-box h3:nth-of-type(even){
+    font-weight: 600;
+    font-family:'Playwrite GB S', sans-serif;
+    color: red;
+}
+
+.heading-box h3:nth-of-type(odd){
+    font-family: 'Bebas Neue', sans-serif;
+    color: rgb(255, 47, 182);
+}
+
+.heading-box h3:hover{
+    color: purple;
+    cursor: -webkit-grab;
+}
