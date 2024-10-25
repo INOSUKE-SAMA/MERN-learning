@@ -6,6 +6,10 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="./Assets/portfolio.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
 </head>
 <body>
     <header>
@@ -61,22 +65,22 @@
             <div class="skills">
                 <h2>HTML5</h2>
                 <div class="progress-bar">
-                    <div class="line"></div>
+                    <div class="line line1"></div>
                     <div class="circle"></div>
                 </div>
                 <h2>CSS3</h2>
                 <div class="progress-bar">
-                    <div class="line"></div>
+                    <div class="line line2"></div>
                     <div class="circle"></div>
                 </div>
                 <h2>Java script</h2>
                 <div class="progress-bar">
-                    <div class="line"></div>
+                    <div class="line line3"></div>
                     <div class="circle"></div>
                 </div>
                 <h2>React</h2>
                 <div class="progress-bar">
-                    <div class="line"></div>
+                    <div class="line line4"></div>
                     <div class="circle"></div>
                 </div>
             </div>
@@ -116,44 +120,137 @@
         <div class="empty"></div>
     </div>
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="projects">
+        <div class="container">
+            <h1>My Projects</h1>
+            <p>Lorem ipsum dolor sit amet consectetur. Mollis erat duis aliquam mauris est risus lectus. Phasellus consequat urna tellus.</p>
 
+            <!-- Filter Buttons -->
+            <div class="filters">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">UI/UX</button>
+                <button class="filter-btn">Web Design</button>
+                <button class="filter-btn">App Design</button>
+                <button class="filter-btn">Graphic Design</button>
+            </div>
+
+            <!-- Project Cards -->
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://img.freepik.com/premium-photo/anime-boy-man-avatar-ai-generative-art_225753-7456.jpg" alt="AirCalling Landing Page Design">
+                    <h3>Web Design</h3>
+                    <h2>AirCalling Landing Page Design</h2>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://img.freepik.com/premium-photo/anime-boy-man-avatar-ai-generative-art_225753-7456.jpg" alt="Business Landing Page Design">
+                    <h3>Web Design</h3>
+                    <h2>Business Landing Page Design</h2>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://img.freepik.com/premium-photo/anime-boy-man-avatar-ai-generative-art_225753-7456.jpg" alt="Ecom Web Page Design">
+                    <h3>Web Design</h3>
+                    <h2>Ecom Web Page Design</h2>
+                </div>
+            </div>
+        </div>
     </div>
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="testimonials">
+        <div class="empty"></div>
+        <!-- Slider main container -->
+        <div class="swiper">
+            <h2>Testimonials</h2>
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <div class="card-testimonials">
+            <img src="https://preview.redd.it/heisenberg-breaking-bad-portrait-v0-c7cs8t4t6tcc1.jpeg?width=1080&crop=smart&auto=webp&s=1d4aec9cf4b75bcef43f9bfc8168d7748940b4c9" alt="Say my name">
+            <div class="text-testimonials">
+                <article><span class="colored-span">"</span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt et nam ut quasi iusto dolore deserunt, similique delectus est enim. <span class="colored-span">"</span></article>
+            <h3>Heisenberg</h3>
+            <p>Chemisrty teacher</p>
+        </div>
+        </div>
+      </div>
 
+      <div class="swiper-slide">
+        <div class="card-testimonials">
+            <img src="https://preview.redd.it/heisenberg-breaking-bad-portrait-v0-c7cs8t4t6tcc1.jpeg?width=1080&crop=smart&auto=webp&s=1d4aec9cf4b75bcef43f9bfc8168d7748940b4c9" alt="Say my name">
+            <div class="text-testimonials">
+                <article><span class="colored-span">"</span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt et nam ut quasi iusto dolore deserunt, similique delectus est enim. <span class="colored-span">"</span></article>
+            <h3>Heisenberg</h3>
+            <p>Chemisrty teacher</p>
+        </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card-testimonials">
+            <img src="https://preview.redd.it/heisenberg-breaking-bad-portrait-v0-c7cs8t4t6tcc1.jpeg?width=1080&crop=smart&auto=webp&s=1d4aec9cf4b75bcef43f9bfc8168d7748940b4c9" alt="Say my name">
+            <div class="text-testimonials">
+                <article><span class="colored-span">"</span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt et nam ut quasi iusto dolore deserunt, similique delectus est enim. <span class="colored-span">"</span></article>
+            <h3>Heisenberg</h3>
+            <p>Chemisrty teacher</p>
+        </div>
+        </div>
+      </div>
+      
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>
+    <div class="empty"></div>
     </div>
     
     <div class="contact-me">
-
+            <div class="empty"></div>
+            <div class="contact-form">
+                <h2>Lets design together</h2>
+                <article>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus dolores, quidem atque illo quam natus? Officia ex deleniti id iste?</article>
+                <form>
+                    <input type="text" placeholder="Enter your email">
+                    <button>Contact Me</button>
+                </form>
+            </div>
+            <div class="empty"></div>
     </div>
 
     <footer>
@@ -161,5 +258,29 @@
     </footer>
     
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+    </script>
 </body>
 </html>
