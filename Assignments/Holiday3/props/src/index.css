@@ -1,0 +1,10 @@
+.std{
+  font-size: 2em;
+  font-family: Arial;
+  padding: 10px;
+  border: 1px solid red;
+}
+
+.std p{
+  margin: 0;
+}
