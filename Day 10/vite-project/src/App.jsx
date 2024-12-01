@@ -1,27 +1,29 @@
-import React from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
-import Home from './components/Home'
-import About from './components/About'
-import Contact from './components/Contact'
-
+import React, { useState } from 'react';
+import { Link, Route, Routes } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
 
 const App = () => {
-  return (
-    <>
-    <nav className='bg-black text-white text-2xl flex justify-evenly items-center p-4 w-full '>
-      <Link to='/'>Home</Link>
-      <Link to='/about'>About</Link>
-      <Link to='/contact'>Contact</Link>
-      <button>Mode</button>
-    </nav>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/about" element={<About/>}/>
-        <Route path="/contact" element={<Contact/>}/>
-       
-      </Routes>
-    </>
-  )
-}
+  const [darkMode, setDarkMode] = useState(false);
 
-export default App
+  return (
+    // Apply the darkMode state to the outermost div to cover the entire screen
+    <div className={darkMode ? 'bg-black text-white min-h-screen' : 'bg-white text-black min-h-screen'}>
+      <nav className={`flex justify-evenly p-4 w-full ${darkMode ? 'shadow-lg shadow-white' : 'shadow-lg'}`}>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
+        <button onClick={() => setDarkMode(!darkMode)}>Mode</button>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home darkMode={darkMode} />} />
+        <Route path="/about" element={<About darkMode={darkMode} />} />
+        <Route path="/contact" element={<Contact darkMode={darkMode} />} />
+      </Routes>
+    </div>
+  );
+};
+
+export default App;
