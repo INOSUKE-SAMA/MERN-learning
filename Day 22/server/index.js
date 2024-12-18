@@ -1,17 +1,17 @@
 import express from 'express';
 import productModel from './model/product.js';
 import connectDB from './db/connectdb.js';
+import cors from 'cors'
 
 console.clear();
 
 const app=express();
-const PORT = process.env.PORT||3000
+const PORT = process.env.PORT||4000
 const DATABASE_URL=process.env.DATABASE_URL||"mongodb://127.0.0.1:27017/product"
-
-
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
+app.use(cors())
 connectDB(DATABASE_URL)
 
 app.get('/',(req,res)=>{
@@ -19,38 +19,18 @@ app.get('/',(req,res)=>{
 })
 
 
-app.get('/createProduct',async(req,res)=>{
+app.post('/createProduct',async(req,res)=>{
+    const{id,name,price} = req.body
     try{
-        const result=await productModel.insertMany([{
-            ID:2,
-            Name:"Figurine",
-            Price:6000
-        },
-        {
-            ID:3,
-            Name:"Basketball",
-            Price:1200
-        },
-        {
-            ID:4,
-            Name:"Woolen jacket",
-            Price:4000
-        },
-        {
-            ID:5,
-            Name:"DSLR canon camera",
-            Price:50000
-        },
-        {
-            ID:6,
-            Name:"Custom made sofa",
-            Price:90000
-        }]
-    )
+        const result=await productModel.insertMany({
+            ID:id,
+            Name:name,
+            Price:price
+        })
         res.send(result)
     }catch(error){
         console.log(error)
-        res.send(error)
+        res.send(500,error)
     }
 })
 app.get('/viewProduct',async(req,res)=>{
@@ -86,7 +66,6 @@ app.get('/deleteProduct',async(req,res)=>{
         res.send(error)
     }
 })
-const port=3000
-app.listen(port,()=>{
-    console.log(`Server running on port ${port}`)
+app.listen(PORT,()=>{
+    console.log(`Server running on port ${PORT}`)
 })
