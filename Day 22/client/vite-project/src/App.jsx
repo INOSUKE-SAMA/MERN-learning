@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
 const App = () => {
@@ -6,6 +6,7 @@ const App = () => {
   const[name,setName]=useState("");
   const[pricing,setPricing]=useState(0);
   const[msg,setMsg]=useState([])
+  const[movie,setMovies]=useState([])
 
   const handleSubmit =async (e)=>{
     e.preventDefault()
@@ -26,6 +27,16 @@ const App = () => {
       setMsg("")
     },4000)
   }
+  useEffect(() => {
+    const fetchData = async () => {
+      const movie = await axios.get("http://localhost:4000/viewProduct").then((movie)=>setMovies(movie.data));
+      console.log(movie)
+    }
+    fetchData();
+  }, [msg]);
+
+  
+
   return (
     <div className='h-[100vh] w-[100vw] flex flex-col items-center justify-around'>
     <h1 className='text-5xl font-semibold primary-font'>Product Entry</h1>
@@ -40,6 +51,20 @@ const App = () => {
       <input type="submit" value="Submit" className='p-2 px-4 bg-black text-white rounded-lg font-semibold' onClick={handleSubmit} />
       <p className={`${msg.state? "text-green-400":"text-red-400"} text-xl`}>{msg.value}</p>
     </form>
+
+    <div className='h-[100vh] w-[100vw]'>
+      <p>Products by view</p>
+     
+     <ol>
+      {
+        movie.map((movie,index)=>{
+          return <li key={index}>ID:{movie.ID},Name:{movie.Name},Pricing:{movie.Price}</li>
+        })
+      }
+     </ol>
+     
+      
+    </div>
   </div>
   )
 }
