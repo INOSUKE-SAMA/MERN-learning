@@ -45,7 +45,7 @@ app.post('/user/login',async(req,res)=>{
         return res.status(404).send("Authorization Denied!!")
     }
 })
-const port =4000;
+const port =3000;
 app.listen(port,()=>{
     console.log(`Server running on port ${port}`)
 })
